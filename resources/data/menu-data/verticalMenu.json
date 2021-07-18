@@ -1,0 +1,35 @@
+{
+  "menu": [
+    {
+      "url": "home",
+      "name": "الرئيسية",
+      "icon": "home",
+      "slug": "home"
+    },
+
+    {
+      "name": "المدونة",
+      "icon": "file",
+      "slug": "",
+      "submenu": [
+        {
+          "name": "عرض",
+          "url": "admin/blogs/",
+          "slug": "blogs"
+        },
+        {
+          "name": "إضافة جديد",
+          "url": "admin/blogs/create",
+          "slug": "blogs-create"
+        }
+      ]
+    },
+
+    {
+      "name": "الإعدادات",
+      "icon": "settings",
+      "slug": "settings",
+      "url": "admin/settings"
+    }
+  ]
+}
