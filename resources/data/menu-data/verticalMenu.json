@@ -1,7 +1,7 @@
 {
   "menu": [
     {
-      "url": "home",
+      "url": "/admin",
       "name": "الرئيسية",
       "icon": "home",
       "slug": "home"

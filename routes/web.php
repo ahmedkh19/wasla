@@ -2,8 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StaterkitController;
-use App\Http\Controllers\LanguageController;
-
+use App\Http\Controllers\ServicesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +19,10 @@ Auth::routes();
 Route::group(['namespace' => '', 'prefix' => 'admin' , 'middleware' => ['auth']], function () {
     Route::get('/', [StaterkitController::class, 'home'])->name('home');
     Route::get('home', [StaterkitController::class, 'home'])->name('home');
-// Route Components
 
+    /* Route Services */
+    Route::resource('services', ServicesController::class, ['only'=> ['index', 'update', 'create','store', 'edit']]);
+    Route::get('services/delete/{id}', [ServicesController::class , 'destroy'])->name('services.destroy');
+    Route::get('services/ajax', [ServicesController::class, 'ajax'])->name('services-ajax');
+    /* Route Services */
 });
