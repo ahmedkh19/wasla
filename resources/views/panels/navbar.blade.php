@@ -43,7 +43,7 @@
           <li class="nav-item"><a class="nav-link menu-toggle" href="javascript:void(0);"><i class="ficon" data-feather="menu"></i></a></li>
         </ul>
         <ul class="nav navbar-nav">
-
+          مرحبا بك في لوحة تحكم موقع وصلة 🤍
         </ul>
       </div>
       <ul class="nav navbar-nav align-items-center ml-auto">

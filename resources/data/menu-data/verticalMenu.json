@@ -8,8 +8,8 @@
     },
 
     {
-      "name": "المدونة",
-      "icon": "file",
+      "name": "التدوينات",
+      "icon": "edit-2",
       "slug": "",
       "submenu": [
         {
@@ -21,6 +21,42 @@
           "name": "إضافة جديد",
           "url": "admin/blogs/create",
           "slug": "blogs-create"
+        }
+      ]
+    },
+
+    {
+      "name": "الخدمات الإستشارية",
+      "icon": "phone",
+      "slug": "",
+      "submenu": [
+        {
+          "name": "عرض",
+          "url": "admin/services/",
+          "slug": "blogs"
+        },
+        {
+          "name": "إضافة جديد",
+          "url": "admin/services/create",
+          "slug": "services-create"
+        }
+      ]
+    },
+
+    {
+      "name": "البرامج التأهيلية",
+      "icon": "video",
+      "slug": "",
+      "submenu": [
+        {
+          "name": "عرض",
+          "url": "admin/programs/",
+          "slug": "programs"
+        },
+        {
+          "name": "إضافة جديد",
+          "url": "admin/programs/create",
+          "slug": "programs-create"
         }
       ]
     },
