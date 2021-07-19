@@ -1,7 +1,9 @@
 @extends('layouts/contentLayoutMaster')
 
 @section('title', 'الرئيسية')
-
+@php
+use App\Models\Service;
+@endphp
 @section('content')
 
   <section id="dashboard-analytics">
@@ -15,12 +17,13 @@
         <div class="card-body">
           <div class="card-text">
             <p>
-              يمكنك إدارة الموقع بشكل كامل عن طريق لوحة التحكم😍 , ومتوفر فيها الآتي:
+              يمكنك إدارة الموقع بشكل كامل عن طريق لوحة التحكم😍 , ومتوفر بها الآتي:
             </p>
             <ul>
               <li>إدارة التدوينات.</li>
               <li>إدارة الخدمات الإستشارية.</li>
               <li>إدارة البرامج التأهيلية.</li>
+              <li>تعديل السلايدر في الصفحة الرئيسية.</li>
             </ul>
           </div>
         </div>
@@ -50,7 +53,7 @@
                 <i data-feather="phone" class="font-medium-5"></i>
               </div>
             </div>
-            <h2 class="font-weight-bolder">100</h2>
+            <h2 class="font-weight-bolder">{{ Service::count() }}</h2>
             <p class="card-text">إجمالي الخدمات الإستشارية</p>
           </div>
         </div>
