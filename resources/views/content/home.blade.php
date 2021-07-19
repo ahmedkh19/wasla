@@ -1,7 +1,9 @@
 @extends('layouts/contentLayoutMaster')
 
 @section('title', 'الرئيسية')
-
+@php
+use App\Models\Service;
+@endphp
 @section('content')
 
   <section id="dashboard-analytics">
@@ -51,7 +53,7 @@
                 <i data-feather="phone" class="font-medium-5"></i>
               </div>
             </div>
-            <h2 class="font-weight-bolder">100</h2>
+            <h2 class="font-weight-bolder">{{ Service::count() }}</h2>
             <p class="card-text">إجمالي الخدمات الإستشارية</p>
           </div>
         </div>
