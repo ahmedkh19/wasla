@@ -15,12 +15,12 @@
         {
           "name": "عرض",
           "url": "admin/blogs/",
-          "slug": "blogs"
+          "slug": "blogs.index"
         },
         {
           "name": "إضافة جديد",
           "url": "admin/blogs/create",
-          "slug": "blogs-create"
+          "slug": "blogs.create"
         }
       ]
     },
