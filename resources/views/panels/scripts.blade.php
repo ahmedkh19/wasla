@@ -16,17 +16,15 @@
 @yield('page-script')
 {{-- page script --}}
 
-{{-- BlogImage --}}
+{{-- CKEditor --}}
+<script src="https://cdn.ckeditor.com/ckeditor5/29.0.0/classic/ckeditor.js"></script>
 <script>
-var BlogImage = document.getElementById('BlogImage');
-if (BlogImage) {
-	BlogImage.addEventListener("change", function() {
-	    const [file] = BlogImage.files
-		if (file) {
-			BlogActuallImage.src = URL.createObjectURL(file)
-		}
-	    BlogActuallImage.classList = '';
-	    BlogSpan.innerHTML = '';
-	});
+var BlogDescription = document.getElementById('BlogDescription');
+if (BlogDescription) {
+    ClassicEditor
+        .create( document.querySelector( '#BlogDescription' ) )
+        .catch( error => {
+            console.error( error );
+        } );
 }
 </script>
