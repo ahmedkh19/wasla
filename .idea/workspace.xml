@@ -22,25 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e44663b-a6e8-4748-9fe4-3f7f5bc09006" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/wasla.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/wasla.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BlogsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlogsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Blogs.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Blogs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_07_20_221724_create_blogs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_07_20_221724_create_blogs_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/content/blogs/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/blogs/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/content/blogs/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/blogs/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/content/blogs/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/blogs/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/content/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/panels/scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panels/scripts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/panels/styles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panels/styles.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="7e44663b-a6e8-4748-9fe4-3f7f5bc09006" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
