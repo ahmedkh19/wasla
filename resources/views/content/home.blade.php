@@ -3,6 +3,7 @@
 @section('title', 'الرئيسية')
 @php
 use App\Models\Service;
+use App\Models\Blogs;
 @endphp
 @section('content')
 
@@ -39,7 +40,7 @@ use App\Models\Service;
                 <i data-feather="edit-2" class="font-medium-5"></i>
               </div>
             </div>
-            <h2 class="font-weight-bolder">50</h2>
+            <h2 class="font-weight-bolder">{{ Blogs::count() }}</h2>
             <p class="card-text">إجمالي التدوينات</p>
           </div>
         </div>

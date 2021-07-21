@@ -6,44 +6,30 @@ use Illuminate\Http\Request;
 use App\Models\Blogs;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Support\Facades\File;
+use DataTables;
 
 class BlogsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         return view('content/blogs/index')
             ->with('posts',Blogs::orderBy('updated_at','DESC')->get());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('content/blogs/create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-    
     	$newImageName = '';
 
         $request->validate([
             'title' => 'required',
             'description' => 'required',
+            'status' => 'in:1,2'
         ]);
 
         if (isset($request->thumbnail)) {
@@ -56,6 +42,8 @@ class BlogsController extends Controller
         	
         	$request->thumbnail->move(public_path('images/blogs'), $newImageName);
  
+        } else {
+            $newImageName = 'image-placeholder.png';
         }
         
         $slug = SlugService::createSlug(Blogs::class, 'slug', $request->title);
@@ -65,103 +53,94 @@ class BlogsController extends Controller
             'description' => $request->input('description'),
             'slug' => $slug,
             'thumbnail' => $newImageName,
+            'status' => $request->status,
         ]);
-        
-        return redirect( route('blogs.index') )
-            ->with('message', 'تم النشر بنجاح!');
+
+        return redirect()->back()->with(['success' => 'تمت ألاضافة بنجاح']);
+
         
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function ajax(Request $request)
     {
-        // i think we don't neew this cuz we gonna use VueJs
+        if ($request->ajax()) {
+            $blogs = Blogs::orderBy('updated_at','DESC')->get();
+            return Datatables::of($blogs)
+                ->addIndexColumn()
+                ->addColumn('action', function($row) {
+                    $action_btn = '<a href="'. route('blogs.edit', $row->id) .'" class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">تعديل</a> <a href="'. route('blogs.destroy', $row->id) .'" class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1">حذف</a>';
+                    return $action_btn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+        return false;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
         if (Blogs::where('id', $id)->first()):
         	return view('content/blogs/edit')
                 ->with('post', Blogs::where('id', $id)->first());
         else:
-        	return redirect( route('blogs.index') )
-                ->with('message', 'هذا المنشور غير موجود!');
+            return redirect()->back()->with(['error' => 'هذه التدوينة غير موجودة! ']);
         endif;
         
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update($id, Request $request)
     {
         $request->validate([
             'title' => 'required',
             'description' => 'required',
+            'status' => 'in:1,2'
+
         ]);
         
         $slug = SlugService::createSlug(Blogs::class, 'slug', $request->title);
-
+        $blog = Blogs::find($id);
         if (isset($request->thumbnail)):
 
 		    $request->validate([
 		        'thumbnail' => 'required|mimes:jpg,jpeg,png|max:5048',
 		    ]);
 		    
-		    $oldimage = Blogs::where('id', $id)->first()->thumbnail;
+		    $oldimage = Blogs::find($id)->thumbnail;
 		    
-		    if ($oldimage && File::exists(public_path('images/blogs/') . $oldimage)):
+		    if ($oldimage !== 'image-placeholder.png' && $oldimage && File::exists(public_path('images/blogs/') . $oldimage)):
 		    	File::delete(public_path('images/blogs/') . $oldimage);
 		    endif;
 
         	$newImageName = uniqid() . '-' . $request->title . '.' . $request->thumbnail->extension();
         	
         	$request->thumbnail->move(public_path('images/blogs'), $newImageName);
-        	
-		    Blogs::where('id', $id)
-		        ->update([
+
+            $blog->update([
 				    'title' => $request->input('title'),
 				    'description' => $request->input('description'),
-				    'slug' => $slug,
+				  //  'slug' => $slug,
 				    'thumbnail' => $newImageName,
+				    'status' => $request->status,
 		    ]);
 	 
         else:
 
-		    Blogs::where('id', $id)
-		        ->update([
+            $blog->update([
 				    'title' => $request->input('title'),
 				    'description' => $request->input('description'),
-				    'slug' => $slug,
-		    ]);
+				  //  'slug' => $slug,
+                'status' => $request->status,
+
+            ]);
         
         endif;
         
-        return redirect( route('blogs.edit', $id) )
-            ->with('message', 'تم التعديل بنجاح!');
+        return redirect()->back()->with(['success' => 'تم التحديث بنجاح']);
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
     	if (!Blogs::where('id',$id)->first()):
@@ -170,12 +149,12 @@ class BlogsController extends Controller
     	endif;
     	
         $post = Blogs::where('id',$id)->first();
-        if ($post->thumbnail && File::exists(public_path('images/blogs/') . $post->thumbnail)) {
+        if ($post->thumbnail !== 'image-placeholder.png' && $post->thumbnail && File::exists(public_path('images/blogs/') . $post->thumbnail)) {
         	File::delete(public_path('images/blogs/') . $post->thumbnail);
         }
         $post->delete();
-        
-        return redirect( route('blogs.index') )
-            ->with('message', 'تم حذف المنشور!');
+
+        return redirect()->back()->with(['success' => 'تم الحذف بنجاح!']);
+
     }
 }

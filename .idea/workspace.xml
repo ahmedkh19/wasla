@@ -23,7 +23,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e44663b-a6e8-4748-9fe4-3f7f5bc09006" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/wasla.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/wasla.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BlogsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlogsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Blogs.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Blogs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_07_20_221724_create_blogs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_07_20_221724_create_blogs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/blogs/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/blogs/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/blogs/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/blogs/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/blogs/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/blogs/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/content/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/panels/scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panels/scripts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/panels/styles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panels/styles.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,6 +163,11 @@
       <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
       <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle" />
+      <path value="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable" />
+      <path value="$PROJECT_DIR$/vendor/cocur/slugify" />
+      <path value="$PROJECT_DIR$/vendor/intervention/imagecache" />
+      <path value="$PROJECT_DIR$/vendor/alexusmai/laravel-file-manager" />
+      <path value="$PROJECT_DIR$/vendor/intervention/image" />
     </include_path>
   </component>
   <component name="ProjectId" id="1vVEkjaDpyDJWip27a04oNZ1dVm" />
@@ -157,17 +178,17 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/storage/uploads/images/services" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/content/blogs" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/content/blogs" />
+      <recent name="$PROJECT_DIR$/public/images/blogs" />
+      <recent name="$PROJECT_DIR$/resources/views/content/alerts" />
       <recent name="$PROJECT_DIR$/public/storage/uploads/images/services" />
       <recent name="$PROJECT_DIR$/resources/views/content/services" />
-      <recent name="$PROJECT_DIR$/resources/views/content" />
-      <recent name="$PROJECT_DIR$/app/Helpers" />
-      <recent name="$PROJECT_DIR$/public/images/slider" />
     </key>
   </component>
   <component name="RunManager">
@@ -202,16 +223,17 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2517" y="0" width="706" height="1032" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1626697674503">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2517" y="0" width="706" height="1032" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1626697674503" />
-    <state x="2613" y="274" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1626699679950">
+    <state x="2613" y="274" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1626898336305">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2613" y="274" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1626699679950" />
+    <state x="2613" y="274" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1626898336305" />
     <state x="2675" y="437" width="399" height="164" key="NewPhpFileDialog" timestamp="1626657677347">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -220,9 +242,9 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2572" y="57" width="616" height="918" key="find.popup/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1626657650648" />
-    <state x="2543" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1626706100079">
+    <state x="2543" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1626901401132">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2543" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1626706100079" />
+    <state x="2543" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1626901401132" />
   </component>
 </project>

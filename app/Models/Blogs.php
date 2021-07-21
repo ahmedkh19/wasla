@@ -16,6 +16,7 @@ class Blogs extends Model
         'slug',
         'description',
         'thumbnail',
+        'status',
     ];
     
     public function sluggable(): array

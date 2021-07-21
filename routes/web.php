@@ -27,5 +27,8 @@ Route::group(['namespace' => '', 'prefix' => 'admin' , 'middleware' => ['auth']]
     Route::get('services/ajax', [ServicesController::class, 'ajax'])->name('services-ajax');
     /* Route Services */
     
-    Route::resource('blogs', BlogsController::class);
+    Route::resource('blogs', BlogsController::class, ['only'=> ['index', 'update', 'create','store', 'edit']]);
+    Route::get('blogs/delete/{id}', [BlogsController::class , 'destroy'])->name('blogs.destroy');
+    Route::get('blogs/ajax', [BlogsController::class, 'ajax'])->name('blogs-ajax');
+
 });

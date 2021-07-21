@@ -35,6 +35,12 @@ return [
             'root' => storage_path('app'),
         ],
 
+        'images' => [
+            'driver' => 'local',
+            'root' => public_path('images/uploads'),
+            'url' => env('APP_URL').'/images/uploads',
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
