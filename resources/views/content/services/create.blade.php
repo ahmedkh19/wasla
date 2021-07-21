@@ -68,9 +68,9 @@
                                     <div class="form-group mb-2">
                                         <label for="blog-edit-status">الحالة</label>
                                         <select name="status" class="form-control" id="blog-edit-status">
-                                            <option @if (old ('status') === 1) selected @endif
+                                            <option @if (old ('status') == 1) selected @endif
                                                     value=1>مفعلة</option>
-                                            <option @if (old ('status') === 2) selected @endif
+                                            <option @if (old ('status') == 2) selected @endif
                                                     value=2>غير مفعلة</option>
                                         </select>
                                     </div>
