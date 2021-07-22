@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StaterkitController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\BlogsController;
+use App\Http\Controllers\ProgramsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,4 +32,5 @@ Route::group(['namespace' => '', 'prefix' => 'admin' , 'middleware' => ['auth']]
     Route::get('blogs/delete/{id}', [BlogsController::class , 'destroy'])->name('blogs.destroy');
     Route::get('blogs/ajax', [BlogsController::class, 'ajax'])->name('blogs-ajax');
 
+    Route::resource('programs', ProgramsController::class);
 });
