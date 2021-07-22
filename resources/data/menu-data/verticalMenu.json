@@ -33,12 +33,12 @@
         {
           "name": "عرض",
           "url": "admin/services/",
-          "slug": "blogs"
+          "slug": "services.index"
         },
         {
           "name": "إضافة جديد",
           "url": "admin/services/create",
-          "slug": "services-create"
+          "slug": "services.create"
         }
       ]
     },
@@ -51,12 +51,12 @@
         {
           "name": "عرض",
           "url": "admin/programs/",
-          "slug": "programs"
+          "slug": "programs.index"
         },
         {
           "name": "إضافة جديد",
           "url": "admin/programs/create",
-          "slug": "programs-create"
+          "slug": "programs.create"
         }
       ]
     },
