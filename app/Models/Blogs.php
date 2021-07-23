@@ -10,7 +10,7 @@ class Blogs extends Model
 {
     use HasFactory;
     use Sluggable;
-    
+
     protected $fillable = [
         'title',
         'slug',
@@ -18,7 +18,7 @@ class Blogs extends Model
         'thumbnail',
         'status',
     ];
-    
+
     public function sluggable(): array
     {
         return [
@@ -27,4 +27,26 @@ class Blogs extends Model
             ]
         ];
     }
+
+    public static function active()
+    {
+        $posts = Blogs::all();
+        $posts = $posts->where('status' , '=', 1);
+        return $posts;
+    }
+
+    public static function activePagination()
+    {
+        $posts = Blogs::where('status' , '=', 1)->paginate(1);
+        return $posts;
+    }
+
+    public static function getActive($id)
+    {
+        $post = Blogs::find($id);
+        if ($post->status === 1) {
+            return $post;
+        } else return false;
+    }
+
 }

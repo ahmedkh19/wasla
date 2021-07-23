@@ -75,7 +75,7 @@
 		                            	    		<input name="UnitTitle[]" value="{{ $unit->unit_title }}" class="form-control" placeholder="عنوان الوحدة (مطلوب)" required="">
 		                            	    	</div>
 		                            	    	<div class="form-group">
-		                            	    		<textarea name="UnitContent[]" class="form-control" placeholder="محتوي الوحدة (اختياري)">{{ $unit->unit_content }}</textarea>
+		                            	    		<textarea name="UnitContent[]" class="form-control ckeditor" placeholder="محتوي الوحدة (اختياري)">{{ $unit->unit_content }}</textarea>
 		                            	    	</div>
                                 	    	</div>
                                 	    	<span onclick="this.parentNode.remove();" class="Programsclose">X</span>
@@ -105,3 +105,29 @@
         </div>
 @endsection
 
+@section('page-script')
+
+    <script>
+        $("document").ready(function() {
+            var allEditors = document.querySelectorAll('.ckeditor');
+            for (var i = 0; i < allEditors.length; ++i) {
+
+                ClassicEditor.create( allEditors[i] , {
+                    placeholder: 'محتوي الوحدة (اختياري)',
+                    toolbar: [ 'heading', '|', 'bold', 'italic', 'bulletedList', 'numberedList' ],
+                    heading: {
+                        options: [
+                            { model: 'paragraph', title: 'نص', class: 'ck-heading_paragraph' },
+                            { model: 'heading1', view: 'h1', title: 'عنوان 1', class: 'ck-heading_heading1' },
+                            { model: 'heading2', view: 'h2', title: 'عنوان 2', class: 'ck-heading_heading2' }
+                        ]
+                    }
+                })
+                    .catch( error => {
+                        console.error( error );
+                    });
+            }
+        })
+
+    </script>
+@endsection

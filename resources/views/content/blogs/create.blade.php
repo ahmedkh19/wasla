@@ -72,7 +72,7 @@
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label class="form-label" for="description">الوصف</label>
-                                    <textarea class="form-control tinymce" id="ckeditor" name="description" cols="30" rows="10">{{ old('description') }}</textarea>
+                                    <textarea class="form-control ckeditor" id="ckeditor" name="description" cols="30" rows="10">{{ old('description') }}</textarea>
                                     @error("description")
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror

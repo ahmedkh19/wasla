@@ -18,16 +18,6 @@
 
 {{-- CKEditor --}}
 <script src="https://cdn.ckeditor.com/ckeditor5/29.0.0/classic/ckeditor.js"></script>
-<script>
-var BlogDescription = document.getElementById('BlogDescription');
-if (BlogDescription) {
-    ClassicEditor
-        .create( document.querySelector( '#BlogDescription' ) )
-        .catch( error => {
-            console.error( error );
-        });
-}
-</script>
 {{-- FORMImage --}}
 <script>
 var FORMImage = document.getElementById('FORMImage');
@@ -87,6 +77,7 @@ if (AddUnit) {
 		CDinput1.classList.add("form-group");
 		var Cinput1 = document.createElement('input');
 		Cinput1.classList.add("form-control");
+		Cinput1.classList.add("ckeditor");
 		Cinput1.name = "UnitNumber[]";
 		Cinput1.placeholder = "رقم الوحدة (مطلوب)";
 		Cinput1.required = true;
@@ -107,26 +98,13 @@ if (AddUnit) {
 		CDtextarea.classList.add("form-group");
 		var Ctextarea = document.createElement('textarea');
 		Ctextarea.name = "UnitContent[]";
+		let CID = 'ckeditor' + Math.floor(Math.random() * 100) + 1;
+
+		Ctextarea.setAttribute("id", CID);
 		Ctextarea.classList.add("form-control");
 		Ctextarea.placeholder = "محتوي الوحدة (اختياري)";
 		CDtextarea.append(Ctextarea);
 		CDiv2.append(CDtextarea);
-		/*
-		ClassicEditor.create( Ctextarea , {
-			placeholder: 'محتوي الوحدة (اختياري)',
-		    toolbar: [ 'heading', '|', 'bold', 'italic', 'bulletedList', 'numberedList' ,'Image'],
-		    heading: {
-		        options: [
-		            { model: 'paragraph', title: 'نص', class: 'ck-heading_paragraph' },
-		            { model: 'heading1', view: 'h1', title: 'عنوان 1', class: 'ck-heading_heading1' },
-		            { model: 'heading2', view: 'h2', title: 'عنوان 2', class: 'ck-heading_heading2' }
-		        ]
-		    }
-		})
-        .catch( error => {
-            console.error( error );
-        });
-        */
 
 		CDiv.append(CDiv2);
 		var Cspan = document.createElement('span');
@@ -136,6 +114,21 @@ if (AddUnit) {
         CDiv.append(Cspan);
 		
 		UnitsDiv.append(CDiv,DivBefore);
+
+		ClassicEditor.create( Ctextarea , {
+			placeholder: 'محتوي الوحدة (اختياري)',
+			toolbar: [ 'heading', '|', 'bold', 'italic', 'bulletedList', 'numberedList' ,'Image'],
+			heading: {
+				options: [
+					{ model: 'paragraph', title: 'نص', class: 'ck-heading_paragraph' },
+					{ model: 'heading1', view: 'h1', title: 'عنوان 1', class: 'ck-heading_heading1' },
+					{ model: 'heading2', view: 'h2', title: 'عنوان 2', class: 'ck-heading_heading2' }
+				]
+			}
+		})
+				.catch( error => {
+					console.error( error );
+				});
 	});
 }
 </script>

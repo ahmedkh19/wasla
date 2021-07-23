@@ -5,6 +5,7 @@ use App\Http\Controllers\StaterkitController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\ProgramsController;
+use App\Http\Controllers\SettingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,11 +27,23 @@ Route::group(['namespace' => '', 'prefix' => 'admin' , 'middleware' => ['auth']]
     Route::resource('services', ServicesController::class, ['only'=> ['index', 'update', 'create','store', 'edit']]);
     Route::get('services/delete/{id}', [ServicesController::class , 'destroy'])->name('services.destroy');
     Route::get('services/ajax', [ServicesController::class, 'ajax'])->name('services-ajax');
-    /* Route Services */
-    
+
+    /* Route Blogs */
     Route::resource('blogs', BlogsController::class, ['only'=> ['index', 'update', 'create','store', 'edit']]);
     Route::get('blogs/delete/{id}', [BlogsController::class , 'destroy'])->name('blogs.destroy');
     Route::get('blogs/ajax', [BlogsController::class, 'ajax'])->name('blogs-ajax');
 
-    Route::resource('programs', ProgramsController::class);
+    /* Route Programs */
+    Route::resource('programs', ProgramsController::class, ['only'=> ['index', 'update', 'create','store', 'edit']]);
+    Route::get('programs/delete/{id}', [ProgramsController::class , 'destroy'])->name('programs.destroy');
+    Route::get('programs/ajax', [ProgramsController::class, 'ajax'])->name('programs-ajax');
+
+    /* Route Programs */
+    // Show //
+    Route::get('settings', [SettingController::class, 'index'])->name('settings.index');
+    // Update //
+    Route::put('settings', [SettingController::class, 'update'])->name('settings.update');
+    // Delete slider images //
+    Route::delete('settings', [SettingController::class, 'destroy'])->name('settings.destroy');
+
 });

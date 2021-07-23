@@ -22,7 +22,22 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e44663b-a6e8-4748-9fe4-3f7f5bc09006" name="Default Changelist" comment="" />
+    <list default="true" id="7e44663b-a6e8-4748-9fe4-3f7f5bc09006" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProgramsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProgramsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Blogs.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Blogs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Programs.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Programs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Service.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/blogs/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/blogs/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/programs/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/programs/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/programs/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/programs/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/programs/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/programs/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/panels/scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panels/scripts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -160,17 +175,17 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/content/blogs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/seeders" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/database/seeders" />
+      <recent name="$PROJECT_DIR$/resources/views/content" />
       <recent name="$PROJECT_DIR$/resources/views/content/blogs" />
       <recent name="$PROJECT_DIR$/public/images/blogs" />
       <recent name="$PROJECT_DIR$/resources/views/content/alerts" />
-      <recent name="$PROJECT_DIR$/public/storage/uploads/images/services" />
-      <recent name="$PROJECT_DIR$/resources/views/content/services" />
     </key>
   </component>
   <component name="RunManager">
@@ -189,6 +204,8 @@
       <updated>1626639000978</updated>
       <workItem from="1626639001999" duration="17187000" />
       <workItem from="1626695943703" duration="11100000" />
+      <workItem from="1626963761747" duration="6523000" />
+      <workItem from="1627050111069" duration="3006000" />
     </task>
     <servers />
   </component>
@@ -212,10 +229,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2517" y="0" width="706" height="1032" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1626697674503" />
-    <state x="2613" y="274" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1626898336305">
+    <state x="2613" y="274" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1626912708189">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2613" y="274" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1626898336305" />
+    <state x="2613" y="274" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1626912708189" />
     <state x="2675" y="437" width="399" height="164" key="NewPhpFileDialog" timestamp="1626657677347">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -224,9 +241,9 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2572" y="57" width="616" height="918" key="find.popup/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1626657650648" />
-    <state x="2543" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1626901401132">
+    <state x="2543" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1627053104182">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2543" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1626901401132" />
+    <state x="2543" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1627053104182" />
   </component>
 </project>

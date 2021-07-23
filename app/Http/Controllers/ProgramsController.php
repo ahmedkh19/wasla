@@ -6,39 +6,41 @@ use Illuminate\Http\Request;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use App\Models\Programs;
 use Illuminate\Support\Facades\File;
+use DataTables;
 
 class ProgramsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         return view('content/programs/index')
         	->with('posts',Programs::orderBy('updated_at','DESC')->get());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('content/programs/create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    public function ajax(Request $request)
+    {
+        if ($request->ajax()) {
+            $blogs = Programs::orderBy('updated_at','DESC')->get();
+            return Datatables::of($blogs)
+                ->addIndexColumn()
+                ->addColumn('action', function($row) {
+                    $action_btn = '<a href="'. route('programs.edit', $row->id) .'" class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">تعديل</a> <a href="'. route('programs.destroy', $row->id) .'" class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1">حذف</a>';
+                    return $action_btn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+        return false;
+    }
+
     public function store(Request $request)
     {
-    
+       // return $request;
     	$newImageName = '';
     	
     	$units = array();
@@ -99,23 +101,6 @@ class ProgramsController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         if (Programs::find($id)):
@@ -127,13 +112,6 @@ class ProgramsController extends Controller
         endif;
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
     	
@@ -214,12 +192,7 @@ class ProgramsController extends Controller
             ->with('message', 'تم التعديل بنجاح!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
     	if (!Programs::find($id)):

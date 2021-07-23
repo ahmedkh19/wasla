@@ -31,4 +31,24 @@ class Service extends Model
         'content' => 'array',
     ];
 
+    public static function active()
+    {
+        $posts = Service::all();
+        $posts = $posts->where('status' , '=', 1);
+        return $posts;
+    }
+
+    public static function activePagination()
+    {
+        $posts = Service::where('status' , '=', 1)->paginate(1);
+        return $posts;
+    }
+
+    public static function getActive($id)
+    {
+        $post = Service::find($id);
+        if ($post->status === 1) {
+            return $post;
+        } else return false;
+    }
 }

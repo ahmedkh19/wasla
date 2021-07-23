@@ -30,4 +30,25 @@ class Programs extends Model
             ]
         ];
     }
+
+    public static function active()
+    {
+        $posts = Programs::all();
+        $posts = $posts->where('status' , '=', 1);
+        return $posts;
+    }
+
+    public static function activePagination()
+    {
+        $posts = Programs::where('status' , '=', 1)->paginate(1);
+        return $posts;
+    }
+
+    public static function getActive($id)
+    {
+        $post = Programs::find($id);
+        if ($post->status === 1) {
+            return $post;
+        } else return false;
+    }
 }

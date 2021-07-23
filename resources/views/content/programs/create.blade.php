@@ -55,8 +55,8 @@
 
                                 <div class="col-12 mb-2">
 		                            <div class="border rounded p-2">
-		                                <p style="text-align:center;">المحتوي والوحدات</p>
-		                                <textarea rows="3" placeholder="محتوي البرنامج" class="form-control"name="content" spellcheck="false">{{ old('content') }}</textarea>
+		                                <p style="text-align:center;">المحتوى والوحدات</p>
+		                                <textarea rows="1" placeholder="محتوى البرنامج" class="form-control"name="content" spellcheck="false">{{ old('content') }}</textarea>
 		                                <div id="UnitsDiv" class="row" style="margin:10px 0;">
 		                                	<div id="DivBefore" style="display:block;width:100%;padding-right:5px;">
 		                                		<button class="btn btn-dark" id="AddUnit" type="button">إضافة وحدة</button>
@@ -82,3 +82,7 @@
         </div>
 @endsection
 
+@section('page-script')
+    <script src="{{asset(mix('js/scripts/pages/page-blog-edit.js'))}}"></script>
+    <script src="{{asset('vendors/js/editors/ckeditor/ckeditor.js')}}"></script>
+@endsection

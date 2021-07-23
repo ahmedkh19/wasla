@@ -4,6 +4,7 @@
 @php
 use App\Models\Service;
 use App\Models\Blogs;
+use App\Models\Programs;
 @endphp
 @section('content')
 
@@ -25,6 +26,7 @@ use App\Models\Blogs;
               <li>إدارة الخدمات الإستشارية.</li>
               <li>إدارة البرامج التأهيلية.</li>
               <li>تعديل السلايدر في الصفحة الرئيسية.</li>
+              <li>تعديل البيانات الخاصة بالموقع.</li>
             </ul>
           </div>
         </div>
@@ -68,7 +70,7 @@ use App\Models\Blogs;
                 <i data-feather="video" class="font-medium-5"></i>
               </div>
             </div>
-            <h2 class="font-weight-bolder">25</h2>
+            <h2 class="font-weight-bolder">{{ Programs::count() }}</h2>
             <p class="card-text">إجمالي البرامج التأهيلية</p>
           </div>
         </div>
