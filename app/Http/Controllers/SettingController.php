@@ -20,7 +20,7 @@ class SettingController extends Controller
     {
     
         $request->validate([
-            'slider_images.*' => 'mimes:jpg,jpeg',
+            'slider_images.*' => 'mimes:jpg,jpeg,png',
         ]);
 
         try {
