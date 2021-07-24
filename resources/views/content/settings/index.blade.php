@@ -104,22 +104,35 @@
                       aria-describedby="basic-addon1"
               />
             </div>
-            <label for="twitter_field">صور السلايدر</label>
+            <label>صور السلايدر</label>
+            
+			@error("slider_images.*")
+			<p><span class="text-danger">برجاء التأكد من اختيار صورة</span></p>
+			@enderror
 
-            <div class="input-group mb-2">
-              <div class="input-group-prepend">
-              <label for='files' class="form-label border"><img id="images" width="100px" height="100px" src="https://romantic-torvalds-fecffd.netlify.app/plus.svg"></label>
-              <input id='files' name="images[]" accept="image/*" type='file' class="d-none" multiple/>
-              <output id='result' class="row">
-                @error("images")
-                <span class="text-danger">{{$message}}</span>
-              @enderror
-            </div>
+            <div id="slider_images_div" class="input-group mb-2">
+
+            	@foreach (json_decode($settings[0]->value) as $image)
+
+            		<div class="form-group" style="position:relative;margin:10px">
+            			<span class="Programsclose">X</span>
+            			<img src="{{ URL::to('/images/settings/' . $image) }}" width="100">
+            			<input class="hidden" name="keep_images[]" value="{{ $image }}">
+            		</div>
+
+            	@endforeach
+
+                <div id="slider_images_before" class="form-group">
+					<label class="cursor-pointer border shadow-lg px-1 py-1">
+						<img src="{{ URL::to('/images/icons/add.png'); }}" style="width:80px;">
+						<input id="slider_images" type="file" accept="image/*" class="hidden">
+					</label>
+				</div>
 
             </div>
+            
               <div class="col-12 d-flex flex-sm-row flex-column mt-2">
                 <button type="submit" class="btn btn-primary mb-1 mb-sm-0 mr-0 mr-sm-1">تأكيد</button>
-                <button type="reset" class="btn btn-outline-secondary">إعادة تعيين</button>
               </div>
 
             </form>
