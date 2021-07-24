@@ -18,11 +18,6 @@ class SettingDatabaseSeeder extends Seeder
 
         $settings = [
             [
-                'key' => 'slider_images',
-                'value' => "['image-placeholder.png']"
-            ],
-
-            [
                 'key' => 'whatsapp',
                 'value' => '966501854780'
             ],
