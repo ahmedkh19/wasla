@@ -3,6 +3,7 @@
 use App\Models\Blogs;
 use App\Models\Service;
 use App\Models\Programs;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -58,4 +59,9 @@ Route::get('programs/{id}', function($id) {
         return Programs::getActive($id);
     else
         return false;
+});
+
+/* Sliders */
+Route::get('slider', function() {
+    return Setting::where('key', '=', 'slider_images')->first()->value;
 });
