@@ -105,31 +105,30 @@
               />
             </div>
             <label>صور السلايدر</label>
-            
-			@error("slider_images.*")
-			<p><span class="text-danger">برجاء التأكد من اختيار صورة</span></p>
-			@enderror
+              <div class="form-group col-md-12">
+                <label class="form-label">
+                  <img id="images" width="100px" style="cursor: pointer" height="100px" src="{{ URL::to('/images/icons/add.png') }}" />
+                  <input id='account_images' accept=".jpg, .jpeg, .png" type='file' class="d-none" />
+                </label>
 
-            <div id="slider_images_div" class="input-group mb-2">
+                <output id="images_result" class="row">
 
-            	@foreach (json_decode($settings[0]->value) as $image)
+                  @forelse (json_decode($settings[0]->value) as $image)
+                    <div>
+                      <span class="remove_img position-absolute" onclick="this.parentNode.remove();">x</span>
+                      <img src="{{ URL( 'images/settings/' . $image ) }}" class="thumbnail" />
 
-            		<div class="form-group" style="position:relative;margin:10px">
-            			<span class="Programsclose">X</span>
-            			<img src="{{ URL::to('/images/settings/' . $image) }}" width="100">
-            			<input class="hidden" name="keep_images[]" value="{{ $image }}">
-            		</div>
+                      <input type="hidden" name="keep_images[]" value="{{ $image }}">
+                    </div>
+                  @empty
+                  <p></p>
+                    @endforelse
+                </output>
 
-            	@endforeach
-
-                <div id="slider_images_before" class="form-group">
-					<label class="cursor-pointer border shadow-lg px-1 py-1">
-						<img src="{{ URL::to('/images/icons/add.png'); }}" style="width:80px;">
-						<input id="slider_images" name="slider_images[]" type="file" accept="image/*" class="hidden">
-					</label>
-				</div>
-
-            </div>
+                @error("slider_images.*")
+                <span class="text-danger">{{$message}}</span>
+                @enderror
+              </div>
             
               <div class="col-12 d-flex flex-sm-row flex-column mt-2">
                 <button type="submit" class="btn btn-primary mb-1 mb-sm-0 mr-0 mr-sm-1">تأكيد</button>

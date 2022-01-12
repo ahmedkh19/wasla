@@ -18,7 +18,6 @@ class SettingController extends Controller
 
     public function update(Request $request)
     {
-    
         $request->validate([
             'slider_images.*' => 'mimes:jpg,jpeg,png',
         ]);
