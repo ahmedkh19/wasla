@@ -31,10 +31,7 @@ Route::get('posts', function() {
 });
 
 Route::get('posts/{id}', function($id) {
-    if (Blogs::find($id))
-    return Blogs::getActive($id);
-    else
-        return false;
+   return (new App\Models\Blogs)->getActiveWithSlug($id);
 });
 
 /* Services */
@@ -44,10 +41,7 @@ Route::get('services', function() {
 });
 
 Route::get('services/{id}', function($id) {
-    if (Service::find($id))
-        return Service::getActive($id);
-    else
-        return false;
+    return (new App\Models\Service)->getActiveWithSlug($id);
 });
 
 /* Programs */
@@ -57,10 +51,8 @@ Route::get('programs', function() {
 });
 
 Route::get('programs/{id}', function($id) {
-    if (Programs::find($id))
-        return Programs::getActive($id);
-    else
-        return false;
+    return (new App\Models\Programs)->getActiveWithSlug($id);
+
 });
 
 /* Sliders */

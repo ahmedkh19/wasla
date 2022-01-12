@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Cviebrock\EloquentSluggable\Services\SlugService;
 use App\Models\Programs;
 use Illuminate\Support\Facades\File;
 use DataTables;
@@ -83,13 +82,11 @@ class ProgramsController extends Controller
  
         }
         
-        $slug = SlugService::createSlug(Programs::class, 'slug', $request->title);
-        
+
         Programs::create([
         	'status' => $request->input('status'),
             'thumbnail' => $newImageName,
             'title' => $request->input('title'),
-            'slug' => $slug,
             'description' => $request->input('description'),
             'content' => $request->input('content'),
             'units' => json_encode($units, JSON_UNESCAPED_UNICODE),
@@ -108,7 +105,7 @@ class ProgramsController extends Controller
                 ->with('post', Programs::where('id', $id)->first());
         else:
         	return redirect( route('programs.index') )
-                ->with('message', 'هذا المنشور غير موجود!');
+                ->with('message', 'هذا البرنامج غير موجود!');
         endif;
     }
 
@@ -142,8 +139,6 @@ class ProgramsController extends Controller
             'description' => 'required',
             'status' => 'required|in:1,2',
         ]);
-        
-        $slug = SlugService::createSlug(Programs::class, 'slug', $request->title);
 
         if (isset($request->thumbnail)):
 
@@ -168,7 +163,6 @@ class ProgramsController extends Controller
 				    'status' => $request->input('status'),
 				    'description' => $request->input('description'),
 				    'content' => $request->input('content'),
-				    'slug' => $slug,
 				    'units' => json_encode($units, JSON_UNESCAPED_UNICODE),
 				    'duration' => $request->input('duration'),
 		    ]);
@@ -181,7 +175,6 @@ class ProgramsController extends Controller
 				    'status' => $request->input('status'),
 				    'description' => $request->input('description'),
 				    'content' => $request->input('content'),
-				    'slug' => $slug,
 				    'units' => json_encode($units, JSON_UNESCAPED_UNICODE),
 				    'duration' => $request->input('duration'),
 		    ]);
@@ -197,7 +190,7 @@ class ProgramsController extends Controller
     {
     	if (!Programs::find($id)):
     		return redirect( route('programs.index') )
-                ->with('message', 'هذا المنشور غير موجود!');
+                ->with('message', 'هذا البرنامج غير موجود!');
     	endif;
     	
         $post = Programs::where('id',$id)->first();
@@ -207,6 +200,6 @@ class ProgramsController extends Controller
         $post->delete();
         
         return redirect( route('programs.index') )
-            ->with('message', 'تم حذف المنشور!');
+            ->with('message', 'تم حذف البرنامج!');
     }
 }

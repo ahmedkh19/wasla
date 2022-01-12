@@ -14,7 +14,7 @@ use App\Models\Programs;
       <!-- Page layout -->
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title">مرحبا بك في لوحة تحكم موقع وصلة🤍 </h4>
+          <h4 class="card-title">مرحبا بك في لوحة تحكم موقع {{WEBSITE_NAME}}🤍 </h4>
         </div>
         <div class="card-body">
           <div class="card-text">

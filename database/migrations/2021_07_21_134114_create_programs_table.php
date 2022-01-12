@@ -18,7 +18,7 @@ class CreateProgramsTable extends Migration
             $table->unsignedInteger('status');
             $table->string('thumbnail')->nullable();
             $table->string('title');
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->longText('description');
             $table->longText('content')->nullable();
             $table->longText('units')->nullable();

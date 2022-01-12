@@ -4,10 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 
 class Service extends Model
 {
     use HasFactory;
+    use HasSlug;
 
     /**
      * The attributes that are mass assignable.
@@ -19,7 +22,8 @@ class Service extends Model
         'description',
         'content',
         'status',
-        'image'
+        'image',
+        'slug'
     ];
 
     /**
@@ -51,4 +55,38 @@ class Service extends Model
             return $post;
         } else return false;
     }
+
+    /*
+    * $id parameter can be both ID / SLUG
+    */
+    public function getActiveWithSlug($id)
+    {
+        /*
+         * Statement 1 (WITH ID)
+         */
+        $post = Service::find($id);
+        $postWithSlug = Service::where('slug', '=', $id)->first();
+        if ($post && $post->status === 1) {
+            return $post;
+        }
+        /*
+         * Statement 2 (WITH SLUG)
+         */
+        else if ($postWithSlug && $postWithSlug->status === 1) {
+            return $postWithSlug;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Get the options for generating the slug.
+     */
+    public function getSlugOptions() : SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('title')
+            ->saveSlugsTo('slug');
+    }
+
 }

@@ -7,7 +7,7 @@ $configData = Helper::applClasses();
       <li class="nav-item mr-auto">
         <a class="navbar-brand" href="{{url('/')}}">
           <span class="brand-logo">
-           <img src="{{asset('images/logo/logo.png')}}">
+           <img src="{{asset('images/logo/' . LOGO_FILE_NAME)}}">
           </span>
         </a>
       </li>

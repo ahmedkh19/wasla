@@ -62,12 +62,12 @@
 
                                 <div class="col-12 mb-2">
 		                            <div class="border rounded p-2">
-		                                <p style="text-align:center;">المحتوي والوحدات</p>
-		                                <textarea rows="3" placeholder="محتوي البرنامج" class="form-control"name="content" spellcheck="false">{{ $post->content }}</textarea>
+		                                <p style="text-align:center;">المحتوى والوحدات</p>
+		                                <textarea rows="3" placeholder="محتوى البرنامج" class="form-control"name="content" spellcheck="false">{{ $post->content }}</textarea>
 		                                <div id="UnitsDiv" class="row" style="margin:10px 0;">
 		                                @foreach ( json_decode($post->units) as $unit )
                                 	    <div class="col-md-6 col-12" style="padding: 5px;">
-                                	    	<div class="rounded border p-1" style="background-color: rgb(115, 103, 240);">
+                                	    	<div class="rounded border p-1" style="background-color: rgb(144 143 147);">
                                 	    		<div class="form-group">
                                 	    			<input class="form-control" name="UnitNumber[]" value="{{ $unit->unit_number }}" placeholder="رقم الوحدة (مطلوب)" required="">
                                 	    		</div>

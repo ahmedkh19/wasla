@@ -44,7 +44,7 @@ if (ProgramsReset) {
 {{-- Program Units --}}
 <style>
 .Programsclose {
-	background-color: red;
+	background-color: #f7f4f1;
 	border-radius: 50%;
 	padding: 5px 10px;
 	cursor: pointer;
@@ -71,7 +71,7 @@ if (AddUnit) {
 
 		var CDiv2 = document.createElement('div');
 		CDiv2.classList.add("rounded", "border", "p-1");
-		CDiv2.style.backgroundColor = '#7367f0';
+		CDiv2.style.backgroundColor = 'rgb(144 143 147)';
 		
 		var CDinput1 = document.createElement('div');
 		CDinput1.classList.add("form-group");

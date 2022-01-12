@@ -125,7 +125,7 @@
                 <div id="slider_images_before" class="form-group">
 					<label class="cursor-pointer border shadow-lg px-1 py-1">
 						<img src="{{ URL::to('/images/icons/add.png'); }}" style="width:80px;">
-						<input id="slider_images" type="file" accept="image/*" class="hidden">
+						<input id="slider_images" name="slider_images[]" type="file" accept="image/*" class="hidden">
 					</label>
 				</div>
 

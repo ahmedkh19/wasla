@@ -135,7 +135,11 @@
                     "targets": 1,
                     "data": 'thumbnail',
                     "render": function (data, type, row, meta) {
-                      return '<img class="services-image" src="{{asset("/images/blogs/")}}' + '/' + data + '"/>';
+                      if (!!data)
+                        return '<img class="services-image" src="{{asset("/images/blogs/")}}' + '/' + data + '"/>';
+                      else
+                        return 'لا توجد صورة';
+
                     }
                   },
                   {

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Blogs;
-use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Support\Facades\File;
 use DataTables;
 
@@ -46,12 +45,10 @@ class BlogsController extends Controller
             $newImageName = 'image-placeholder.png';
         }
         
-        $slug = SlugService::createSlug(Blogs::class, 'slug', $request->title);
-        
+
         Blogs::create([
             'title' => $request->input('title'),
             'description' => $request->input('description'),
-            'slug' => $slug,
             'thumbnail' => $newImageName,
             'status' => $request->status,
         ]);
@@ -98,7 +95,6 @@ class BlogsController extends Controller
 
         ]);
         
-        $slug = SlugService::createSlug(Blogs::class, 'slug', $request->title);
         $blog = Blogs::find($id);
         if (isset($request->thumbnail)):
 
@@ -119,7 +115,6 @@ class BlogsController extends Controller
             $blog->update([
 				    'title' => $request->input('title'),
 				    'description' => $request->input('description'),
-				  //  'slug' => $slug,
 				    'thumbnail' => $newImageName,
 				    'status' => $request->status,
 		    ]);
@@ -129,7 +124,6 @@ class BlogsController extends Controller
             $blog->update([
 				    'title' => $request->input('title'),
 				    'description' => $request->input('description'),
-				  //  'slug' => $slug,
                 'status' => $request->status,
 
             ]);

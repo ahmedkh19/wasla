@@ -135,7 +135,10 @@
                             "targets": 1,
                             "data": 'thumbnail',
                             "render": function (data, type, row, meta) {
+                                if (!!data)
                                 return '<img class="services-image" src="{{asset("/images/programs/")}}' + '/' + data + '"/>';
+                                else
+                                    return 'لا توجد صورة';
                             }
                         },
                         {

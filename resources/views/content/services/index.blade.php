@@ -136,7 +136,11 @@
                     "targets": 2,
                     "data": 'image',
                     "render": function (data, type, row, meta) {
-                      return '<img class="services-image" src="{{asset("/storage/uploads/images/services/")}}' + '/' + data + '"/>';
+                      if (!!data)
+                        return '<img class="services-image" src="{{asset("/storage/uploads/images/services/")}}' + '/' + data + '"/>';
+                      else
+                        return 'لا توجد صورة';
+
                     }
                   },
 
