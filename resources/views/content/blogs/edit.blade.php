@@ -84,7 +84,7 @@
                                         <h4 class="mb-1">الصورة الرئيسية</h4>
                                         <div class="media flex-column flex-md-row">
                                             <img
-                                                    src="@if ($post->thumbnail){{asset('/images/blogs/' . $post->thumbnail)}} @else {{asset('/images/blogs/image-placeholder.png')}} @endif"
+                                                    src="@if ($post->thumbnail){{asset('/images/blogs/' . $post->thumbnail)}} @else https://via.placeholder.com/150x150 @endif"
                                                     id="blog-feature-image"
                                                     class="rounded mr-2 mb-1 mb-md-0"
                                                     width="170"

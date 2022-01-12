@@ -24,10 +24,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7e44663b-a6e8-4748-9fe4-3f7f5bc09006" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SettingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SettingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/CreateAdminUserSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/CreateAdminUserSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/content/settings/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/settings/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/panels/scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panels/scripts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/portrait/small/avatar-s-11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/portrait/small/avatar-s-11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/services/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/services/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/services/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/services/edit.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,15 +182,15 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/images/icons" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/images/portrait/small" />
+      <recent name="$PROJECT_DIR$/resources/images/portrait/small" />
       <recent name="$PROJECT_DIR$/database/seeders" />
       <recent name="$PROJECT_DIR$/resources/views/content" />
       <recent name="$PROJECT_DIR$/resources/views/content/blogs" />
-      <recent name="$PROJECT_DIR$/public/images/blogs" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images/icons" />
     </key>
   </component>
   <component name="RunManager">

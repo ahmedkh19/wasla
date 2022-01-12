@@ -83,7 +83,7 @@
                                         <h4 class="mb-1">الصورة الرئيسية</h4>
                                         <div class="media flex-column flex-md-row">
                                             <img
-                                                    src="{{asset('/storage/uploads/images/services/image-placeholder.png')}}"
+                                                    src="https://via.placeholder.com/150x150"
                                                     id="blog-feature-image"
                                                     class="rounded mr-2 mb-1 mb-md-0"
                                                     width="170"

@@ -119,7 +119,7 @@
                                         <h4 class="mb-1">الصورة الرئيسية</h4>
                                         <div class="media flex-column flex-md-row">
                                             <img
-                                                    src="@if ($service->image){{asset('/storage/uploads/images/services/' . $service->image)}} @else {{asset('/storage/uploads/images/services/image-placeholder.png')}} @endif"
+                                                    src="@if ($service->image){{asset('/storage/uploads/images/services/' . $service->image)}} @else https://via.placeholder.com/150x150 @endif"
                                                     id="blog-feature-image"
                                                     class="rounded mr-2 mb-1 mb-md-0"
                                                     width="170"
