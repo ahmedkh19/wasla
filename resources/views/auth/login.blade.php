@@ -14,11 +14,11 @@
     <div class="card mb-0">
       <div class="card-body">
         <a href="javascript:void(0);" class="brand-logo">
-          <img style="width: 180px;" src="{{asset('images/logo/logo.png')}}" >
+          <img style="width: 180px;" src="{{asset('images/logo/' . LOGO_FILE_NAME)}}" >
 
         </a>
 
-        <h4 class="card-title mb-1">👋!مرحبا بك في (وصلة) </h4>
+        <h4 class="card-title mb-1">👋!مرحبا بك في موقع ({{WEBSITE_NAME}}) </h4>
         <p class="card-text mb-2">يرجى تسجيل الدخول</p>
 
         <form class="auth-login-form mt-2" method="POST" action="{{ route('login') }}">

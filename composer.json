@@ -9,13 +9,17 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
-        "cviebrock/eloquent-sluggable": "^8.0",
+        "alexusmai/laravel-file-manager": "^2.5",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "intervention/image": "^2.6",
+        "intervention/imagecache": "^2.5",
         "laravel/framework": "^8.12",
+        "laravel/passport": "^10.1",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.0",
+        "spatie/laravel-sluggable": "^2.6",
         "yajra/laravel-datatables-oracle": "^9.18"
     },
     "require-dev": {
@@ -43,7 +47,8 @@
         "Database\\Seeders\\": "database/seeders/"
       },
       "files": [
-        "app/Helpers/helpers.php"
+        "app/Helpers/helpers.php",
+        "app/Helpers/general.php"
       ]
     },
     "autoload-dev": {

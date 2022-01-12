@@ -3,7 +3,10 @@
 use App\Models\Setting;
 use App\Models\User;
 use Illuminate\Support\Facades\File;
-
+define('WEBSITE_NAME', 'وصلة');
+define('LOGO_FILE_NAME', 'logo.png');
+define('FAVICON_FILE_NAME', 'logo.png');
+define('MADE_BY', 'مؤسسة التفكير الإبداعي لتقنية المعلومات');
 define('PAGINATION_COUNT', 15);
 define('IMAGES_PATH', '/storage/uploads/images/' );
 
@@ -37,6 +40,10 @@ function deleteImage($folder, $name) {
                 File::delete($image_path);
             }
             return true;
+        } else if ($name === 'image-placeholder.png') {
+            return true;
+        } else {
+            return false;
         }
         return true;
     } catch (\Exception $ex) {

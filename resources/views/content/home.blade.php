@@ -3,6 +3,8 @@
 @section('title', 'الرئيسية')
 @php
 use App\Models\Service;
+use App\Models\Blogs;
+use App\Models\Programs;
 @endphp
 @section('content')
 
@@ -12,7 +14,7 @@ use App\Models\Service;
       <!-- Page layout -->
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title">مرحبا بك في لوحة تحكم موقع وصلة🤍 </h4>
+          <h4 class="card-title">مرحبا بك في لوحة تحكم موقع {{WEBSITE_NAME}}🤍 </h4>
         </div>
         <div class="card-body">
           <div class="card-text">
@@ -24,6 +26,7 @@ use App\Models\Service;
               <li>إدارة الخدمات الإستشارية.</li>
               <li>إدارة البرامج التأهيلية.</li>
               <li>تعديل السلايدر في الصفحة الرئيسية.</li>
+              <li>تعديل البيانات الخاصة بالموقع.</li>
             </ul>
           </div>
         </div>
@@ -39,7 +42,7 @@ use App\Models\Service;
                 <i data-feather="edit-2" class="font-medium-5"></i>
               </div>
             </div>
-            <h2 class="font-weight-bolder">50</h2>
+            <h2 class="font-weight-bolder">{{ Blogs::count() }}</h2>
             <p class="card-text">إجمالي التدوينات</p>
           </div>
         </div>
@@ -67,7 +70,7 @@ use App\Models\Service;
                 <i data-feather="video" class="font-medium-5"></i>
               </div>
             </div>
-            <h2 class="font-weight-bolder">25</h2>
+            <h2 class="font-weight-bolder">{{ Programs::count() }}</h2>
             <p class="card-text">إجمالي البرامج التأهيلية</p>
           </div>
         </div>

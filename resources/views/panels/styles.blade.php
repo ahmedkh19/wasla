@@ -31,3 +31,4 @@
 {{-- user custom styles --}}
 <link rel="stylesheet" href="{{ asset(mix('css/style.css')) }}" />
 <link rel="stylesheet" href="{{ asset(mix('css/style-rtl.css')) }}" />
+<link rel="stylesheet" href="{{ asset('vendor/file-manager/css/file-manager.css') }}">
