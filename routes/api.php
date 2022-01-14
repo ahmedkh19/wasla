@@ -28,7 +28,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('posts', function() {
     $blogs = Blogs::active();
     foreach ($blogs as $blog) {
-        $blog->thumbnail = url('/images/blogs/') . $blog->thumbnail;
+        $blog->thumbnail = url('/images/blogs/'. $blog->thumbnail) ;
         $blog->description = strip_tags($blog->description);
     }
     return $blogs;
