@@ -37,7 +37,6 @@ Route::get('posts', function() {
 Route::get('posts/{id}', function($id) {
     $post = (new App\Models\Blogs)->getActiveWithSlug($id);
     $post->thumbnail = url('/images/blogs/'. $post->thumbnail) ;
-    $post->description = strip_tags($post->description);
     return $post;
 });
 
