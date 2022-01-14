@@ -30,7 +30,9 @@
             cursor: pointer;
             transition: all 0.3s linear 0s;}
         #addItem:hover{ color: burlywood;}
-
+        .row {
+            margin-right: 0 !important;
+        }
 
     </style>
 @endsection
@@ -90,21 +92,28 @@
                                     <div class="border rounded p-2" >
                                         <h4 class="mb-1">المميزات/المحتوى</h4>
                                         <button type="button" id="addItem" style="float: left !important;">+</button>
-                                        <div class="row">
-                                            <div id="Services">
-                                                    <div class="form-group mb-2">
+                                        <hr>
+                                        <div id="appendItems">
 
-                                                        <label for="blog-content">المميزة</label>
-                                                        <input
-                                                                type="text"
-                                                                name="content[]"
-                                                                id="blog-content"
-                                                                class="form-control"
-                                                                placeholder="الاستراتيجية الاتصالية"
-                                                        />
-                                                    </div>
+                                            <div class="row">
+                                                <div id="Services">
+                                                        <div class="form-group mb-2">
+
+                                                            <label for="blog-content">المميزة</label>
+                                                            <input
+                                                                    type="text"
+                                                                    name="content[]"
+                                                                    id="blog-content"
+                                                                    class="form-control"
+                                                                    placeholder="الاستراتيجية الاتصالية"
+                                                            />
+                                                        </div>
+                                                </div>
+                                                <span onclick="this.parentNode.remove();" style="cursor: pointer;">X</span>
                                             </div>
+
                                         </div>
+
                                         @error("content")
                                         <span class="text-danger">{{$message}}</span>
                                         @enderror
@@ -172,18 +181,24 @@
 
         //To add more inputs
         $('#addItem').click(function(){
-            $('#Services').append(`
-               <div class="form-group mb-2">
-                  <label for="blog-content">المميزة</label>
-                   <input
-                          type="text"
-                          name="content[]"
-                          id="blog-content"
-                          class="form-control"
-                          placeholder="الاستراتيجية الاتصالية"
-                  />
+            $('#appendItems').append(`
+               <div class="row">
+                   <div id="Services">
+                        <div class="form-group mb-2">
+                              <label for="blog-content">المميزة</label>
+                              <input
+                                type="text"
+                                name="content[]"
+                                id="blog-content"
+                                class="form-control"
+                                placeholder="الاستراتيجية الاتصالية"
+                                />
+                        </div>
+                  </div>
+                  <span onclick="this.parentNode.remove();" style="cursor: pointer;">X</span>
                </div>
-            `);
+`
+            );
         });
 
     </script>
