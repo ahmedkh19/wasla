@@ -26,16 +26,19 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 /* POSTS */
 Route::get('posts', function() {
-    $blogs = Blogs::active();
-    foreach ($blogs as $blog) {
+    $posts = Blogs::active();
+    foreach ($posts as $blog) {
         $blog->thumbnail = url('/images/blogs/'. $blog->thumbnail) ;
         $blog->description = strip_tags($blog->description);
     }
-    return $blogs;
+    return $posts;
 });
 
 Route::get('posts/{id}', function($id) {
-   return (new App\Models\Blogs)->getActiveWithSlug($id);
+    $post = (new App\Models\Blogs)->getActiveWithSlug($id);
+    $post->thumbnail = url('/images/blogs/'. $post->thumbnail) ;
+    $post->description = strip_tags($post->description);
+    return $post;
 });
 
 /* Services */
