@@ -26,8 +26,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 /* POSTS */
 Route::get('posts', function() {
-   // return Blogs::activePagination();
-    return Blogs::active();
+    $blogs = Blogs::active();
+    foreach ($blogs as $blog) {
+        $blog->thumbnail = url('/images/blogs/') . $blog->thumbnail;
+        $blog->description = strip_tags($blog->description);
+    }
+    return $blogs;
 });
 
 Route::get('posts/{id}', function($id) {
