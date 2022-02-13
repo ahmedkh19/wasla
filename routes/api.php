@@ -50,10 +50,10 @@ Route::get('posts/{id}', function($id) {
 Route::get('services', function() {
     $posts = Service::active();
     foreach ($posts as $service) {
-        if (!$service->thumbnail) {
+        if (!$service->image) {
             $service->thumbnail = url('/images/blogs/image-placeholder.png') ;
         } else
-            $service->thumbnail = url('/storage/uploads/images/services/'. $service->thumbnail) ;
+            $service->image = url('/storage/uploads/images/services/'. $service->image) ;
         $service->description = strip_tags($service->description);
     }
     return $posts;
