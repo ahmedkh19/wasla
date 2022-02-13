@@ -39,7 +39,6 @@ class ServicesController extends Controller
 
     public function store(ServicesRequest $request)
     {
-       // return $request;
         try {
             DB::beginTransaction();
             $service = Service::create($request->except(['image']));

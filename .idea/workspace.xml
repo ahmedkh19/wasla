@@ -23,10 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e44663b-a6e8-4748-9fe4-3f7f5bc09006" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/portrait/small/avatar-s-11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/portrait/small/avatar-s-11.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/content/services/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/services/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/content/services/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/services/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ServicesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ServicesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +177,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images/portrait/small" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -231,6 +231,13 @@
       <workItem from="1641267956991" duration="599000" />
       <workItem from="1641357189071" duration="30000" />
       <workItem from="1641975859946" duration="2343000" />
+      <workItem from="1642145514249" duration="5226000" />
+      <workItem from="1642251186694" duration="1211000" />
+      <workItem from="1642354867655" duration="1260000" />
+      <workItem from="1642427245611" duration="604000" />
+      <workItem from="1644700767712" duration="3014000" />
+      <workItem from="1644731249321" duration="6000" />
+      <workItem from="1644768508745" duration="836000" />
     </task>
     <servers />
   </component>
@@ -250,14 +257,14 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="743" y="334" width="424" height="491" key="FileChooserDialogImpl" timestamp="1641113017931">
+    <state x="743" y="334" width="424" height="491" key="FileChooserDialogImpl" timestamp="1642436209191">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="743" y="334" width="424" height="491" key="FileChooserDialogImpl/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1641113017931" />
-    <state x="623" y="217" width="672" height="648" key="search.everywhere.popup" timestamp="1641976291331">
-      <screen x="0" y="0" width="1920" height="1032" />
+    <state x="743" y="334" width="424" height="491" key="FileChooserDialogImpl/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1642436209191" />
+    <state x="2543" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1644701063376">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="623" y="217" width="672" height="648" key="search.everywhere.popup/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1641976291331" />
-    <state x="2543" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1638516831013" />
+    <state x="2543" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1644701063376" />
   </component>
 </project>

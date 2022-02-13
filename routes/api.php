@@ -28,6 +28,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('posts', function() {
     $posts = Blogs::active();
     foreach ($posts as $blog) {
+        if (!$blog->thumbnail) {
+            $blog->thumbnail = url('/images/blogs/image-placeholder.png') ;
+        } else
         $blog->thumbnail = url('/images/blogs/'. $blog->thumbnail) ;
         $blog->description = strip_tags($blog->description);
     }
@@ -76,15 +79,15 @@ Route::middleware('throttle:1,3')->post('contact', function(Request $request) {
 		'email' => 'required|max:255|email',
 		'subject' => 'required|max:500',
 	]);
-	
+
 	if ($validator->fails()) {
 		return response()->json(['error' => $validator->messages()], 200);
 	}
-	
+
 	$to = Setting::where('key', '=', 'email')->first()->value;
-	
+
 	Mail::to($to)->send(new Contact($request->all()));
-	
+
 	return response()->json(['response' => "sent"], 200);
 
 });
@@ -100,15 +103,15 @@ Route::middleware('throttle:1,3')->post('order', function(Request $request) {
 		'service' => 'required|max:255',
 		'subject' => 'required|max:500',
 	]);
-	
+
 	if ($validator->fails()) {
 		return response()->json(['error' => $validator->messages()], 200);
 	}
-	
+
 	$to = Setting::where('key', '=', 'email')->first()->value;
-	
+
 	Mail::to($to)->send(new Order($request->all()));
-	
+
 	return response()->json(['response' => "sent"], 200);
 
 });
