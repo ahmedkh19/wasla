@@ -39,13 +39,24 @@ Route::get('posts', function() {
 
 Route::get('posts/{id}', function($id) {
     $post = (new App\Models\Blogs)->getActiveWithSlug($id);
-    $post->thumbnail = url('/images/blogs/'. $post->thumbnail) ;
+    if (!$post->thumbnail) {
+        $post->thumbnail = url('/images/blogs/image-placeholder.png') ;
+    } else
+        $post->thumbnail = url('/images/blogs/'. $post->thumbnail) ;
     return $post;
 });
 
 /* Services */
 Route::get('services', function() {
-    return Service::active();
+    $posts = Service::active();
+    foreach ($posts as $service) {
+        if (!$service->thumbnail) {
+            $service->thumbnail = url('/images/blogs/image-placeholder.png') ;
+        } else
+            $service->thumbnail = url('/storage/uploads/images/services/'. $service->thumbnail) ;
+        $service->description = strip_tags($service->description);
+    }
+    return $posts;
    // return Service::activePagination();
 });
 
