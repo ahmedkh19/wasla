@@ -5,6 +5,8 @@ use App\Models\Service;
 use App\Models\Programs;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use App\Mail\Contact;
 use App\Mail\Order;
@@ -48,12 +50,12 @@ Route::get('posts/{id}', function($id) {
 
 /* Services */
 Route::get('services', function() {
-    $posts = Service::active();
+    $posts = DB::table('services')->select('name AS title', 'image AS thumbnail', 'slug','description', 'content')->where('status', 1)->get();
     foreach ($posts as $service) {
-        if (!$service->image) {
+        if (!$service->thumbnail) {
             $service->thumbnail = url('/images/blogs/image-placeholder.png') ;
         } else
-            $service->image = url('/storage/uploads/images/services/'. $service->image) ;
+            $service->thumbnail = url('/storage/uploads/images/services/'. $service->thumbnail) ;
         $service->description = strip_tags($service->description);
     }
     return $posts;
@@ -66,7 +68,15 @@ Route::get('services/{id}', function($id) {
 
 /* Programs */
 Route::get('programs', function() {
-    return Programs::active();
+    $posts = DB::table('programs')->select('title','slug', 'thumbnail', 'description', 'content', 'units as programmEle', 'duration')->where('status', 1)->get();
+    foreach ($posts as $program) {
+        if (!$program->thumbnail) {
+            $program->thumbnail = url('/images/blogs/image-placeholder.png') ;
+        } else
+            $program->thumbnail = url('/images/programs/'. $program->thumbnail) ;
+        $program->description = strip_tags($program->description);
+    }
+    return $posts;
     //  return Programs::activePagination();
 });
 
@@ -78,6 +88,14 @@ Route::get('programs/{id}', function($id) {
 /* Sliders */
 Route::get('slider', function() {
     return Setting::where('key', '=', 'slider_images')->first()->value;
+});
+
+Route::get('settings', function () {
+    $settings_req = Setting::all();
+    $settings['whatsapp'] = $settings_req[1]->value;
+    $settings['email'] = $settings_req[2]->value;
+    $settings['twitter'] = $settings_req[3]->value;
+    return $settings;
 });
 
 /* Contact */
