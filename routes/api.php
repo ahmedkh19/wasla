@@ -62,8 +62,14 @@ Route::get('services', function() {
    // return Service::activePagination();
 });
 
-Route::get('services/{id}', function($id) {
-    return (new App\Models\Service)->getActiveWithSlug($id);
+Route::get('services/{slug}', function($slug) {
+    $post = Service::select('name AS title', 'image AS thumbnail', 'slug','description', 'content')->where('status', 1)->where('slug' , $slug)->first();
+    if (!$post->thumbnail) {
+        $post->thumbnail = url('/images/blogs/image-placeholder.png') ;
+    } else
+        $post->thumbnail = url('/storage/uploads/images/services/'. $post->thumbnail) ;
+
+    return $post;
 });
 
 /* Programs */
@@ -80,14 +86,25 @@ Route::get('programs', function() {
     //  return Programs::activePagination();
 });
 
-Route::get('programs/{id}', function($id) {
-    return (new App\Models\Programs)->getActiveWithSlug($id);
+Route::get('programs/{slug}', function($slug) {
+//    $post = DB::table('programs')->select('title','slug', 'thumbnail', 'description', 'content', 'units as programmEle', 'duration')->where('status', 1)->where('slug', $slug)->get();
+    $post = (new App\Models\Programs)->getActiveWithSlug($slug);
+    if (!$post->thumbnail) {
+        $post->thumbnail = url('/images/blogs/image-placeholder.png') ;
+    } else
+        $post->thumbnail = url('/images/programs/'. $post->thumbnail) ;
+    return $post;
 
 });
 
 /* Sliders */
 Route::get('slider', function() {
-    return Setting::where('key', '=', 'slider_images')->first()->value;
+    $slider = [];
+    $images = json_decode(Setting::where('key', '=', 'slider_images')->first()->value);
+    foreach($images as $image) {
+        $slider[] = url( "images/settings/" . $image );
+    }
+    return json_encode($slider,JSON_UNESCAPED_SLASHES);
 });
 
 Route::get('settings', function () {
@@ -99,7 +116,7 @@ Route::get('settings', function () {
 });
 
 /* Contact */
-Route::middleware('throttle:1,3')->post('contact', function(Request $request) {
+Route::middleware('throttle:1,30')->post('contact', function(Request $request) {
 
     $validator = Validator::make($request->all(), [
 		'name' => 'required|max:255',
@@ -122,7 +139,7 @@ Route::middleware('throttle:1,3')->post('contact', function(Request $request) {
 });
 
 /* Order  */
-Route::middleware('throttle:1,3')->post('order', function(Request $request) {
+Route::middleware('throttle:3,159')->post('order', function(Request $request) {
 
     $validator = Validator::make($request->all(), [
 		'name' => 'required|max:255',

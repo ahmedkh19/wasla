@@ -10,7 +10,7 @@ use Illuminate\Queue\SerializesModels;
 class Order extends Mailable
 {
     use Queueable, SerializesModels;
-    
+
     public $data;
 
     /**
@@ -21,7 +21,7 @@ class Order extends Mailable
     public function __construct($data)
     {
     	$this->data = $data;
-    	$this->data['title'] = 'wasla.net طلب خدمة جديد عل موقع وصلة';
+    	$this->data['title'] = 'wasla.net طلب خدمة جديد على موقع وصلة';
     	$this->data['not_contact'] = true;
     }
 
