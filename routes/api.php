@@ -116,7 +116,7 @@ Route::get('settings', function () {
 });
 
 /* Contact */
-Route::middleware('throttle:1,30')->post('contact', function(Request $request) {
+Route::middleware('throttle:1,4')->post('contact', function(Request $request) {
 
     $validator = Validator::make($request->all(), [
 		'name' => 'required|max:255',
@@ -139,7 +139,7 @@ Route::middleware('throttle:1,30')->post('contact', function(Request $request) {
 });
 
 /* Order  */
-Route::middleware('throttle:3,159')->post('order', function(Request $request) {
+Route::middleware('throttle:1,4')->post('order', function(Request $request) {
 
     $validator = Validator::make($request->all(), [
 		'name' => 'required|max:255',
